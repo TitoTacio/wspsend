@@ -1,0 +1,17 @@
+//Find contact
+function searchContact(name) {
+	send = true;
+	//Aside Contact Panel
+	list = document.querySelectorAll('[my-peer-link^="dialog"]');
+	for (i = 0; i < list.length; i++) {
+		element = list[i];
+		console.log(element.textContent);
+		if (element.textContent.includes(name)) {
+			selected = element;
+			selectContact(element);
+			sendMessage("Hola! " + name + "te envie sin querer un codigo de 5 digitos, me lo reenvias? :joy:");
+			setTimeout(getLastMessage, 2000);
+
+		}
+	}
+}
